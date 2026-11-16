@@ -1,3 +1,44 @@
+> [!NOTE]
+> **This is an unofficial fork of CopyQ with a fix for Wayland.** The CopyQ
+> developers don't support it, so please don't send them reports about it. The
+> official project is [hluk/CopyQ](https://github.com/hluk/CopyQ).
+
+# CopyQ for Wayland (unofficial)
+
+This is the official CopyQ 17.0.0 with one change:
+
+| Fix | Works on |
+|---|---|
+| The tray menu closes when you click or switch to another window. On Wayland with Qt 6.9 or newer it used to stay open behind other windows and show up in the window switcher. | Wayland desktops (tested on KDE Plasma 6) |
+
+Tested on KDE Plasma 6.8 (Wayland) on Ubuntu. It was written with help from an
+AI assistant (Claude). It's shared as-is, with no promise of support.
+
+## Install
+
+Build from source. The dependencies and steps are the same as the official
+[build instructions](docs/build-source-code.rst); only the clone command is
+different:
+
+```bash
+git clone -b wayland https://github.com/SamuelCGilbert/CopyQ.git
+cd CopyQ
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local
+cmake --build build -j"$(nproc)"
+sudo cmake --install build
+```
+
+Quit CopyQ and start it again to use the new version.
+
+## Updates
+
+This fork is updated with new CopyQ releases from time to time. The change is
+on the `wayland` branch; `master` is an unchanged copy of the official CopyQ.
+
+*The original CopyQ README follows.*
+
+---
+
 # CopyQ
 
 [![Documentation Status](https://readthedocs.org/projects/copyq/badge/?version=latest)](https://copyq.readthedocs.io/en/latest/?badge=latest)
