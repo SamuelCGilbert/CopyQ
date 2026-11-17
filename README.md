@@ -16,7 +16,28 @@ AI assistant (Claude). It's shared as-is, with no promise of support.
 
 ## Install
 
-Build from source. The dependencies and steps are the same as the official
+### AppImage
+
+Download `CopyQ-…-x86_64.AppImage` from the
+[latest release](https://github.com/SamuelCGilbert/CopyQ/releases/latest),
+make it executable and run it:
+
+```bash
+chmod +x CopyQ-*-x86_64.AppImage
+./CopyQ-*-x86_64.AppImage
+```
+
+If another CopyQ is running, quit it first. Your history and settings are
+kept, because every CopyQ uses the same ones. To start this one when you log
+in, turn on "Autostart" in its preferences.
+
+It runs on Ubuntu 24.04, KDE neon and newer systems (the official AppImage
+needs Ubuntu 26.04 or newer). It can update itself with tools such as
+[Gear Lever](https://flathub.org/apps/it.mijorus.gearlever) or AppImageUpdate.
+
+### Build from source
+
+The dependencies and steps are the same as the official
 [build instructions](docs/build-source-code.rst); only the clone command is
 different:
 
